@@ -41,7 +41,7 @@ h1 {
     font-size: 20px;
 }
 
-#input-button {
+#input-button, #delete-all-button {
     font-size: 20px;
     cursor: pointer;
     transition: 0.4s;

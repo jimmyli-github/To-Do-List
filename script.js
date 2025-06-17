@@ -11,10 +11,13 @@ function addTask() {
         return;
     }
     const li = document.createElement("li");
+    const date = new Date();
+    const currentDate = date.toLocaleDateString();
+    const currentTime = date.toLocaleTimeString();
     li.innerHTML = `
         <label>
             <input type="checkbox"></input>
-            <span>${task}</span>
+            <span>${task} ${currentDate} ${currentTime}</span>
         </label>
         <span class="edit-btn">Edit</span>
         <span class="delete-btn">Delete</span>
@@ -58,4 +61,12 @@ function updateCounters() {
 
     completedCounter.textContent = completedTasks;
     uncompletedCounter.textContent = uncompletedTasks;
+}
+
+function deleteAll() {
+    if (confirm("Are you sure you want to delete all tasks?")) {
+        listContainer.innerHTML = "";
+
+        updateCounters();
+    }
 }
